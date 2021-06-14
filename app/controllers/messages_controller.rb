@@ -8,7 +8,6 @@ before_action :require_user
       ActionCable.server.broadcast "chatroom_channel", foo: message.body
     else
       puts "parte 2"
-      render :json {message: "error"}, status: 202
     end
   end
 

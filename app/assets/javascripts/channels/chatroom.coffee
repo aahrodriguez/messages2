@@ -3,6 +3,7 @@ App.chatroom = App.cable.subscriptions.create "ChatroomChannel",
     console.log "cable working :)"
     console.log data
 
+
   disconnected: ->
     # Called when the subscription has been terminated by the server
 
