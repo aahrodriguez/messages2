@@ -4,9 +4,7 @@ before_action :require_user
   def create
     message = current_user.messages.build(messages_param)
     if message.save
-      ActionCable.server.broadcast "chatroom_channel", foo: message.body
-    else
-      puts "parte 2"
+      ActionCable.server.broadcast "chatroom_channel", mod_message: message_render(message)
     end
   end
 
